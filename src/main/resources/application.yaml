@@ -1,0 +1,25 @@
+server.port: 8085
+camunda:
+  bpm:
+    client:
+      base-url: http://localhost:8085/engine-rest # The URL pointing to the Camunda Platform Runtime REST API
+      async-response-timeout: 1000 # Defines the maximum duration of the long-polling request
+      worker-id: spring-boot-client # Identifies the worker towards the Engine
+    
+logging:
+  level:  
+    org: 
+      camunda: 
+        bpm:
+          client: info
+
+camunda.bpm.admin-user:
+  id: sa
+  password: password
+
+spring: 
+  jpa: 
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true
